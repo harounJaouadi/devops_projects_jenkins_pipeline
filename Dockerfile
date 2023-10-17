@@ -38,13 +38,13 @@ EXPOSE 8080
 # USER jenkins
 
 #default command
-CMD java -jar /data/hello-world-0.1.0.jar
+CMD java -jar /target/hello-world-0.1.0.jar
 # Optionally, configure Docker permissions (you may need to adjust this depending on your use case)
 # RUN usermod -a -G docker jenkins
 
 #copy hello world to docker image from builder image
 # Other configurations and plugins can be added here
 
-COPY --from=maven_build /tmp/target/hello-world-0.1.0.jar /data/hello-world-0.1.0.jar
+COPY --from=maven_build /tmp/target/hello-world-0.1.0.jar /target/hello-world-0.1.0.jar
 # Start Jenkins
 ENTRYPOINT ["/bin/bash"]
