@@ -45,6 +45,6 @@ CMD java -jar /target/hello-world-0.1.0.jar
 #copy hello world to docker image from builder image
 # Other configurations and plugins can be added here
 
-COPY --from=maven_build /tmp/target/hello-world-0.1.0.jar /target/hello-world-0.1.0.jar
+COPY --from=maven_build /target/hello-world-0.1.0.jar /target/hello-world-0.1.0.jar
 # Start Jenkins
 ENTRYPOINT ["/bin/bash"]
