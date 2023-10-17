@@ -22,7 +22,7 @@ pipeline{
                     } 
         stage("push to docker hub") {
             steps {    
-                withCredentials([usernamePassword(credentialsId: 'DockerHubCredentials', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]){
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]){
                     echo "======== executing ========"
                     sh "pwd"
                     sh "ls"
