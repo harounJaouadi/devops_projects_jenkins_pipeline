@@ -3,7 +3,8 @@ pipeline{
     stages{
         stage("getting code") {
             steps {
-                git url: 'https://github.com/harounJaouadi/spring-boot-hello-world', branch: 'master',
+                git url: 'https://github.com/harounJaouadi/devops_projects_jenkins_pipeline', branch: 'master',
+                credentialsId: 'github-credentials' //jenkins-github-creds
                 sh "ls -ltr"
             }
         }
