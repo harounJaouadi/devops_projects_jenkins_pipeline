@@ -14,6 +14,7 @@ pipeline{
             steps {                
                 script {
                     echo "======== executing ========"
+                        sh "export PATH=$PATH:/opt/apache-maven-3.9.5/bin"
                         sh "mvn clean package"
             
                         sh "docker build -t hello-world ."
